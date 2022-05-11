@@ -1,0 +1,135 @@
+<meta charset="utf-8">
+<script type = "text/javascript" src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<style>
+  .dropdown{
+    border: 0;
+    outline: 0;
+    height: 20px;
+    width:20%;
+    padding-left: 10px;
+    background-color: rgb(204, 204, 204);
+    color: #666;
+   -moz-box-sizing: border-box; 
+   -webkit-box-sizing: border-box; 
+    box-sizing:border-box;
+  }
+  table {
+  border-collapse: collapse;
+
+  }
+  table td {
+    border: 1px solid black;
+}
+</style>
+
+<crowd-form>
+    <div id="ideological" style="margin-top: 30px; margin-left: 20px; margin-bottom: 20px;">
+        <h2>Ideology and the Domestic American Economy</h2>
+        <h3>Question asked: What is the nation's most important problem?</h3>
+        <p style='line-height: 2'>Answer: ${text}</p>
+        <br>
+        <p><strong>Instructions: </strong><br><br>We are annotating the dimensions of ideology around the topic of the domestic American economy.  We will follow the examples in the pre-qualification page; please note that these examples are reproduced below this text for your ease of reference.  Start by reading the text below and ask yourself which ideological dimension of the domestic American economy are covered by this text.  If you cannot easily situate the dimensions revert back to the examples below.  Annotate as many dimensions as possible for each text.  If no dimensions apply, for example if the text is about wars or a state budget, then skip the task because it is not about the domestic American economy.</p>
+        <p>Single word answers can be tricky to annotate.  When they  are broad, like for example, “economy”  they  are meaningless because we are not sure what the author is conveying with this broad term. Hence, the task should be skipped. However, some single word answers, like for example, “the deficit”, are more meaningful because the text can be understood as the author is against an increase in deficit/budget deficit.  In this case, the text should be annotated.</p><br>
+    </div>
+    <div style="margin-left: 50px; margin-bottom: 50px;">
+      <h3 style="text-align: center;">Dimensions of Ideology: </h3>
+      <table style="margin-left: auto; margin-right: auto; width: 1300px">
+        <tr>
+          <td>
+            <label for="unemployment-inflation" style="font-size: smaller"><strong>Unemployment-Inflation Tradeoff</strong></label><br>
+            <select name ="controls" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="one">Support employment policy</option>
+              <option value="two">Against expansive monetary policy because it generates inflation</option>
+              <option value="three">Both</option>
+            </select><br>
+          </td>
+          <td>
+            <label for="social spending-deficit" style="font-size: smaller"><strong>Social Spending-Deficit Tradeoff</strong></label><br>
+            <select name="government" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="moderate_val_left">Support redistributive policy</option>
+              <option value="mixed_val">Discretionary fiscal policy generates budget deficit</option>
+              <option value="moderate_val_right">Both</option>
+            </select><br>
+          </td>
+          <td style="text-align: center;">
+            <label for="social_topic_0"><strong>Government Size</strong></label><br>
+            <select name="taxation" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="moderate_val_left">Supports government regulation and social safety</option>
+              <option value="mixed_val">Support Small government and deregulation</option>
+              <option value="moderate_val_right">Both</option>
+            </select><br>
+          </td>
+          <td style="text-align: center;">
+            <label for="social_topic_0"><strong>Taxation-Inequality Tradeoff</strong></label><br>
+            <select name="taxation" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="moderate_val_left">Support taxing the rich</option>
+              <option value="mixed_val">Support across the board tax cuts</option>
+              <option value="moderate_val_right">Both</option>
+            </select><br>
+          </td>
+          <td style="text-align: center;">
+            <label for="foreign_topic_0"><strong>Trade-Tariffs/Quotas Tradeoff</strong></label><br>
+            <select name="trade" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="moderate_val_left">Supports tariff</option>
+              <option value="mixed_val">Supports free trade</option>
+              <option value="moderate_val_right">both</option>
+            </select><br>
+          </td>
+          <td style="text-align: center;">
+            <label for="foreign_topic_0"><strong>Employee-Business Tradeoff</strong></label><br>
+            <select name="labor" class="dropdown">
+              <option selected value="default"> -- select an option -- </option>
+              <option value="moderate_val_left">Supports employees and unions</option>
+              <option value="mixed_val">Supports businesses</option>
+              <option value="moderate_val_right">Both</option>
+            </select><br>
+          </td>
+        </tr>
+        <tr>
+
+          <td>
+            <p>
+            <u>Example 1:</u> The most important problem is employment social security.<br><br>
+            <u>Annotation:</u> support employment policy<br><br> 
+            </p>
+          </td>
+
+          <td>
+            <p>
+            <u>Example 1:</u> the most important problem is homelessness<br>
+            Annotation: support redistributive policy<br><br>
+            </p>  
+          </td>
+            
+          <td>
+            <i>Example 1	: the most important problem is environment/farming/interest rates<br></i>
+            Annotation	: support government regulation and social safety<br><br>
+          </td>
+          
+          <td>
+            <i>Example 1	: the most important problem is high taxes<br></i>
+            Annotation	: support across the board tax cuts<br><br>
+          </td>
+
+          <td>
+            <i>Example 1	: the most important problem is that cheap imports are affecting our jobs<br></i>
+            Annotation	: support tariff<br><br>
+          </td>
+
+          <td>
+            <i>Example 1	: the most important problem is that cheap imports are affecting our jobs<br></i>
+            Annotation	: support tariff<br><br>
+          </td>
+        </tr>
+      </table>
+    </div>
+        
+</crowd-form>

@@ -1,0 +1,127 @@
+<meta charset="utf-8">
+<script type="text/javascript" src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-entity-annotation 
+  answer-format="flatten-objects"
+  name="crowd-entity-annotation"
+  header="How does the writer feel in connection with ${entity} in this passage?"
+  labels="[{'label': 'joy', 'shortDisplayName': 'joy', 'fullDisplayName': 'Joy'},{'label': 'admire', 'shortDisplayName': 'adm', 'fullDisplayName': 'Admiration'}, {'label': 'fear', 'shortDisplayName': 'fear', 'fullDisplayName': 'Fear'}, {'label': 'surprise', 'shortDisplayName': 'surp', 'fullDisplayName': 'Surprise'}, {'label': 'sadness', 'shortDisplayName': 'sad', 'fullDisplayName': 'Sadness'}, {'label': 'disgust', 'shortDisplayName': 'dis', 'fullDisplayName': 'Disgust'}, {'label': 'anger', 'shortDisplayName': 'ang', 'fullDisplayName': 'Anger'}, {'label': 'interest', 'shortDisplayName': 'int', 'fullDisplayName': 'Interest'}]"
+  text = "${passage}"
+>
+
+<div id="instructions" style="margin-top: 20px; font-size: 16px;">
+    <ul >
+      <li><strong>Read</strong> the text carefully. We are interested in <strong>emotions expressed in text by the writer/speaker towards ${entity}</strong> using the following emotion wheel:</br><div align="center"><img width="600" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div></li>
+      <li>The emotions are arranged based on their relationship to each other: joy is opposite of sadness, fear the opposite of anger, etc. The words themselves aren't important - use them as guides to understand what emotion is being expressed <strong>towards the entity</strong>. Click on the Instructions button at the top left of this window to see some examples of emotions expressed towards an entity through text.</li>
+      <li>Select all emotions that you think the writer/speaker feels towards <strong>${entity}</strong> based on the text. Use the slider to indicate your <strong>confidence</strong> in the presence of the emotion from Not confident(0) to Very confident(5)</li>
+      <li>Identify and highlight <strong>at most one</strong> word, phrase or sentence which illustrates each emotion that you have selected previously. You can highlight text by selecting the label on the right and then clicking and dragging your cursor over the text you want to highlight.</li>
+      <li>You can <strong>change or remove</strong> labels and highlights anytime.</li>
+    </ul>
+  </div>
+  
+    <full-instructions header="Interpersonal emotion annotation instructions">
+    <ul >
+      <li><strong>Read</strong> the text carefully. We are interested in <strong>emotions expressed in text by the writer/speaker towards, or in connection with ${entity}</strong> using the following emotion wheel:</br><div align="center"><img width="500" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div></li>
+      <li>The emotions are arranged based on their relationship to each other: joy is opposite of sadness, fear the opposite of anger, etc. The words themselves aren't important - use them as guides to understand what emotion is being expressed <strong>towards the entity</strong>. Click on the Instructions button at the top left of this window to see some examples of emotions expressed towards an entity through text.</li>
+      <li>Select all emotions that you think the writer/speaker feels towards <strong>${entity}</strong> based on the text. Use the slider to indicate your <strong>confidence</strong> in the presence of the emotion from Not confident(0) to Very confident(5)</li>
+      <li>Identify and highlight <strong>at most one</strong> word, phrase or sentence which illustrates each emotion that you have selected previously. You can highlight text by selecting the label on the right and then clicking and dragging your cursor over the text you want to highlight.</li>
+      <li>You can <strong>change or remove</strong> labels and highlights anytime.</li>
+    </ul>
+  </full-instructions>
+
+  <short-instructions>
+   <div id="short-instructions" style="margin-top: 20px; font-size: 16px;">
+        <p><strong>Please click on 'More Instructions' at the bottom to read detailed instructions and see the emotion wheel to use for this task</strong>. </p>
+        <p>Here are some examples of each of the 8 emotion labels in our wheel being expressed <strong>in connection with the entity 'Tom'</strong> through text:</p>
+        <ul>
+      <li><strong>Joy</strong> I am delighted that Tom will be travelling with us tonight.</li>
+      <li><strong>Admiration</strong> Tom expertly navigated the team through the crisis. </li>
+      <li><strong>Fear</strong> Tom has too much power, and it should make us worry. </li>
+      <li> <strong>Surprise</strong> Tom didn't mince his words on the subject, and it was a refreshing change from the dull proceedings. </li>
+      <li><strong>Sadness</strong> After 4 years of hope, Tom's stellar leadership has sadly come to an end.</li>
+      <li><strong>Disgust</strong> Tom's incompetence is staggering - maybe he just doesn't want to do the job. </li>
+      <li><strong>Anger</strong> Tom's actions were reprehensible and disgusting - he ought to apologize. </li>
+      <li><strong>Interest</strong> We eagerly await Dr. Tom's speech to the committee, and his decision on the subject of the trade law. </li>
+    </ul>
+    </div>
+  </short-instructions>   
+
+<div id="emotionQuestion" style="margin-top: 20px; column-count:1;">
+        <p><strong>Please click on 'Instructions' at the top left to see examples, and 'More Instructions' at the bottom of the examples pane to read detailed instructions to use for this task. </strong></p>
+        <p>We are interested in how the writer of a passage feel towards, or in connection with ${entity} in the text using the following emotion wheel. Try to highlight at most one word/phrase/sentence for each emotion by selecting the emotion color on the right, and dragging it over the text.</p>
+        <div align="center"><img width="500" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div>
+        <p>If you think an emotion is expressed by the writer of the text towards ${entity}, but can't select just one word/phrase/sentence, you can select the emotion here along with your confidence rating(from 1-not confident to 5-totally confident).</p>
+        <br>
+      <div id="cols">
+    <crowd-checkbox name="entity_emotions" value="joy">Joy</crowd-checkbox>
+    <crowd-slider name="joy-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="admire">Admiration</crowd-checkbox>
+    <crowd-slider name="adm-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="fear">Fear</crowd-checkbox>
+    <crowd-slider name="fear-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="surprise">Surprise</crowd-checkbox>
+    <crowd-slider name="surp-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="sadness">Sadness</crowd-checkbox>
+    <crowd-slider name="sad-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="disgust">Disgust</crowd-checkbox>
+    <crowd-slider name="dis-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="anger">Anger</crowd-checkbox>
+    <crowd-slider name="ang-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    <crowd-checkbox name="entity_emotions" value="interest">Interest</crowd-checkbox>
+    <crowd-slider name="int-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
+    </div>
+</div>
+
+<div id="entityQuestion" style="margin-top: 20px; column-count:1;">
+        Now answer the following questions:<br><br>Is the passage predominantly about <strong>${entity}</strong>?<br>
+     <crowd-radio-group>
+        <crowd-radio-button name="predom">Yes</crowd-radio-button>
+        <crowd-radio-button name="not_predom">No</crowd-radio-button>
+      </crowd-radio-group>
+      </div>
+
+<div id="warmthQuestion" style="margin-top: 20px; column-count:1;">
+        How does the writer feel in general about <strong>${entity}</strong>?<br>
+      <crowd-radio-group>
+        <crowd-radio-button name="warm">Warmly</crowd-radio-button>
+        <crowd-radio-button name="cold">Coldly</crowd-radio-button>
+        <crowd-radio-button name="neutral">Neutrally</crowd-radio-button>
+        <crowd-radio-button name="mixed">Mixed</crowd-radio-button>
+      </crowd-radio-group>
+      </div>
+      
+<div id="approvalQuestion" style="margin-top: 20px; column-count:1;">
+        How does the writer feel in general of <strong>${entity}'s</strong> actions/behavior?<br>
+      <crowd-radio-group>
+        <crowd-radio-button name="approval">Approval</crowd-radio-button>
+        <crowd-radio-button name="disapproval">Disapproval</crowd-radio-button>
+        <crowd-radio-button name="neut_app">Neutral</crowd-radio-button>
+        <crowd-radio-button name="mixed_app">Mixed</crowd-radio-button>
+      </crowd-radio-group>
+    </div>
+    
+<div id="commentsBox" style="margin-top: 20px; column-count:1;">
+        <h3>Comments</h3>
+        <crowd-text-area style="border:1px solid black;" name="comments" rows="4"></crowd-text-area>
+</div>
+ 
+</crowd-entity-annotation>
+    
+<script type="text/javascript">
+    document.addEventListener('all-crowd-elements-ready', () => {
+    document
+        .querySelector('crowd-entity-annotation')
+        .shadowRoot
+        .querySelector('crowd-form')
+        .form
+        .appendChild(emotionQuestion)
+        .appendChild(entityQuestion)
+        .appendChild(warmthQuestion)
+        .appendChild(approvalQuestion)
+        .appendChild(commentsBox);
+    });
+    </script>
+
+<section>
+  <input name="dummy", type="hidden"/>
+</section>

@@ -1,0 +1,141 @@
+<meta charset="utf-8">
+<script type = "text/javascript" src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<style>
+  .dropdown{
+    border: 0;
+    outline: 0;
+    height: 20px;
+    width:20%;
+    padding-left: 10px;
+    background-color: rgb(204, 204, 204);
+    color: #666;
+   -moz-box-sizing: border-box; 
+   -webkit-box-sizing: border-box; 
+    box-sizing:border-box;
+  }
+  .affective-dropdown{
+    border: 0;
+    outline: 0;
+    height: 20px;
+    width:50%;
+    padding-left: 10px;
+    background-color: rgb(204, 204, 204);
+    color: #666;
+   -moz-box-sizing: border-box; 
+   -webkit-box-sizing: border-box; 
+    box-sizing:border-box;
+  }
+  
+  #group{ 
+        display: none;
+  }
+  
+  #value{
+      display: none;
+  }
+
+</style>
+
+<h1 style="text-align: center;"><strong>This task is accessible using Google Chrome only</strong></h1>
+
+<crowd-entity-annotation 
+  answer-format="flatten-objects"
+  name="crowd-entity-annotation"
+  header="Affective Polarization"
+  text="${Text}"
+  labels="[{label: 'entity_1', shortDisplayName: 'ent1', fullDisplayName: 'Domestic Issue/Policy'}, {label: 'entity_2', shortDisplayName: 'ent2', fullDisplayName: 'Group'}, {label: 'entity_3', shortDisplayName: 'ent3', fullDisplayName: 'Value'}]"></crowd-entity-annotation>
+
+    <div id="entities" style = "margin-top: 20px; ">
+        <p><strong>Instructions: </strong>Please read the question and its answer carefully. Note that party mentioned in body of the question is an entity. So, annotate for party as a group entity. Is there other entities such as values and issues? If yes, please also annotate those entities too.</p><br>
+        <p><strong>Annotation example: </strong></p>
+        <br>
+        <div id="domestic">
+          <label for="entity_1" style="color: green;"><strong>Domestic Issue/Policy</strong></label>
+        <br>
+        <select name ="entity_1" class="affective-dropdown">
+          <option selected value="default"> -- select an option -- </option>
+          <option value="likes">Likes</option>
+          <option value="neutral">Neutral</option>
+          <option value="dislikes">Dislikes</option>
+        </select><br>
+        <crowd-checkbox name="ent1-checkbox"></crowd-checkbox>
+        <label><a href="javascript:hideShowGroup();">Not Applicable</a></label>
+        </div>
+        <br>
+        <br>
+    
+        <div id="group" style="display: none">
+          <label for="entity_2"><strong>Group</strong></label>
+          <br>
+          <select name ="entity_2" class="affective-dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="likes">Likes</option>
+            <option value="neutral">Neutral</option>
+            <option value="dislikes">Dislikes</option>
+          </select><br>
+          <crowd-checkbox name="ent2-checkbox"></crowd-checkbox>
+          <label><a href="javascript:hideShowValue();">Not Applicable</a></label>
+        </div>
+        <br>
+        <br>
+        
+        <div id="value" style="display: none;">
+          <label for="entity_3"><strong>Value</strong></label>
+          <br>
+          <select name ="entity_3" class="affective-dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="likes">Likes</option>
+            <option value="neutral">Neutral</option>
+            <option value="dislikes">Dislikes</option>
+          </select><br>
+          <crowd-checkbox name="ent3-checkbox"></crowd-checkbox>
+          <label>Not Applicable</label>
+        </div>
+        </div>
+    
+        <script type="text/javascript">
+            document.addEventListener('all-crowd-elements-ready', () => {
+            document
+                .querySelector('crowd-entity-annotation')
+                .shadowRoot
+                .querySelector('crowd-form')
+                .form
+                .appendChild(entities)
+              
+            });
+            </script>
+
+<script type="text/javascript">
+    var doc = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector('footer-content')
+    .querySelector('#noEntityToCheck');
+    doc.remove();
+    var el = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector('#label-pane-title')
+    el.style.color = "green";
+</script>
+
+<script type="text/javascript"> 
+    function hideShowGroup(){
+  
+      var el = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector("#group");
+      if (el.style.display =="none"){
+        el.style.display = "block";
+      }
+      else{
+        el.style.display = "none";
+      }
+      return;
+    }
+    function hideShowValue(){
+        var el = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector("#value");
+        if (el.style.display =="none"){
+        el.style.display = "block";
+        }
+        else{
+         el.style.display = "none";
+        }
+        return;
+    }
+  </script>
