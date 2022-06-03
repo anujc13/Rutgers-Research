@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QuestionForm xmlns:tns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
+  <Overview>
+      <Title>Ideology and the Domestic American Economy</Title>
+      <Text>Please read the following directions: We are annotating the dimensions of ideology around the topic of the domestic American economy.  
+      We will follow the examples in the pre-qualification page; please note that these examples are reproduced below this text for your ease of reference.  
+      Start by reading the text below and ask yourself which ideological dimension of the domestic American economy are covered by this text.  
+      If you cannot easily situate the dimensions revert back to the examples below.  
+      Annotate as many dimensions as possible for each text.  
+      If no dimensions apply, for example if the text is about wars or a state budget, then skip the task because it is not about the domestic American economy. Single word answers can be tricky to annotate.  
+      When they  are broad, like for example, “economy”  they  are meaningless because we are not sure what the author is conveying with this broad term. 
+      Hence, the task should be skipped. However, some single word answers, like for example, “the deficit”, are more meaningful because the text can be understood as the author is against an increase in deficit/budget deficit.  
+      In this case, the text should be annotated.
+      </Text>
+  </Overview>
+  <Question>
+      <QuestionIdentifier>question1</QuestionIdentifier>
+      <IsRequired>true</IsRequired>
+      <QuestionContent>
+          <Text>Have you read and understood the directions for this task?</Text>
+      </QuestionContent>
+      <AnswerSpecification>
+        <SelectionAnswer>
+          <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+              <Selection>
+                <SelectionIdentifier>1</SelectionIdentifier>
+                <Text>Yes</Text>
+              </Selection>
+              <Selection>
+                <SelectionIdentifier>2</SelectionIdentifier>
+                <Text>No</Text>
+              </Selection>
+            </Selections>
+        </SelectionAnswer>
+    </AnswerSpecification>
+  </Question>
+</QuestionForm>

@@ -14,14 +14,14 @@ for text in df['mip1']:
 def do(input):
     return "<span class='key' style='color: red'>{}</span>".format(input)
 
-for x in range(25, len(adj), 50):
+for x in range(26, len(adj), 50):
     text = adj[x]
     if len(text) > 132:
         words = text.split()
         output = ''
         for word in words:
             if word.lower() in keywords:
-                output += do(word) + ' '
+                output += word + ' '
             else:
                 output += word + ' '
         merge.append(output)
@@ -32,7 +32,7 @@ dictionary = {'text': merge}
     
 dictionary = pd.DataFrame.from_dict(dictionary)
 
-dictionary.to_csv('mip.csv')
+dictionary.to_csv('mip2.csv')
 
 
 

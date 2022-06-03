@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnswerKey xmlns:tns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/AnswerKey.xsd">
+<Question>
+        <QuestionIdentifier>question1</QuestionIdentifier>
+        <AnswerOption>
+            <SelectionIdentifier>1</SelectionIdentifier>
+            <AnswerScore>1</AnswerScore>
+        </AnswerOption>
+        <AnswerOption>
+            <SelectionIdentifier>2</SelectionIdentifier>
+            <AnswerScore>0</AnswerScore>
+        </AnswerOption>
+    </Question>
+    <QualificationValueMapping>
+        <PercentageMapping>
+            <MaximumSummedScore>1</MaximumSummedScore>
+        </PercentageMapping>
+    </QualificationValueMapping>
+</AnswerKey>
