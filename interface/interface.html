@@ -11,16 +11,16 @@
 <crowd-entity-annotation 
   answer-format="flatten-objects"
   name="crowd-entity-annotation"
-  header="Affective Polarization"
-  text="Spend too much money.,Budget minded.  A little more conscious of other peoples money.  I like their foreign policies.  Just more concerned about foreign policy and they are not as weak as Democrats.,,National debt military status. We need to build up our military give people more incentive to be in the military unemployment.,The military.,,,7,3,2,1,1,1,1.0
-  1984,2.0,The Democratic party is a compassionate party.  They honor working people and they do provide., The great giveaway program  It's not like they really mean it.  In an election year, you're not going to find anyone, Democrat or Republican, voting against Social Security.  I dislike political motivation.  I'd like to see someone vote his conscience occasionally.,The Republican party encourages private competition which I think is economically healthy.  For example, the deregulation of the airlines and also buses were deregulated, weren't they?  This allowed other entrepreneurial people to get into, to operate businesses that had otherwise been closed.  Private enterprise is good.  I'll tell you another thing is that Air Atlanta, primarily a Black corporation.  It caters to Blacks.  It's run by Blacks or owned by Black people which proves the health of ethnic enterprises.  (A.E.) Clare Booth Luce.,,Economy -- getting out of debt.  Education -- I feel that we have a problem and it needs analyzing.  Too much permissive passing; we should teach people how to read and our teachers are not teaching.  Communism in this hemisphere -- I'm afraid of the spread of communism.,Education -- the need to improve our educational system."
-  labels="[{label: 'entity_1', shortDisplayName: 'ent1', fullDisplayName: 'Domestic Issue/Policy'}, {label: 'entity_2', shortDisplayName: 'ent2', fullDisplayName: 'Group'}, {label: 'entity_3', shortDisplayName: 'ent3', fullDisplayName: 'Value'}]"></crowd-entity-annotation>
+  header="Detecting Affect | Instructions: Does the author of the text like or dislike Republicans?"
+  text="I believe America should have medicare for all. I cannot stand the position of Republicans"
+  labels="[{label: 'entity_1', shortDisplayName: 'Like', fullDisplayName: 'Person'}, {label: 'entity_2', shortDisplayName: 'Dislike', fullDisplayName: 'Group'}]">
   
   
-  
-  
+
   <div id ="table">
-    <h3 style="text-align: center;">Dimensions of Ideology: </h3>
+    <br><br><br><br>
+    <h3><strong>Detecting Preference for Policy-Position</strong></h3>
+    <p>Which policy position does the author of the text support?</p>
     <table style="border-collapse: collapse; border: 1px solid black; width: 10%">
       <tr>
         <td style="border: 1px solid black;">
@@ -205,8 +205,7 @@
       </tr>
     </table>
     <h3>Question asked: What is the nation's most important problem?</h3>
-    <p style='line-height: 2'>Answer: Spend too much money.,Budget minded.  A little more conscious of other peoples money.  I like their foreign policies.  Just more concerned about foreign policy and they are not as weak as Democrats.,,National debt military status. We need to build up our military give people more incentive to be in the military unemployment.,The military.,,,7,3,2,1,1,1,1.0
-      1984,2.0,The Democratic party is a compassionate party.  They honor working people and they do provide., The great giveaway program  It's not like they really mean it.  In an election year, you're not going to find anyone, Democrat or Republican, voting against Social Security.  I dislike political motivation.  I'd like to see someone vote his conscience occasionally.,The Republican party encourages private competition which I think is economically healthy.  For example, the deregulation of the airlines and also buses were deregulated, weren't they?  This allowed other entrepreneurial people to get into, to operate businesses that had otherwise been closed.  Private enterprise is good.  I'll tell you another thing is that Air Atlanta, primarily a Black corporation.  It caters to Blacks.  It's run by Blacks or owned by Black people which proves the health of ethnic enterprises.  (A.E.) Clare Booth Luce.,,Economy -- getting out of debt.  Education -- I feel that we have a problem and it needs analyzing.  Too much permissive passing; we should teach people how to read and our teachers are not teaching.  Communism in this hemisphere -- I'm afraid of the spread of communism.,Education -- the need to improve our educational system.</p>
+    <p style='line-height: 2'>Answer: ${text}</p>
   </div>
     <br>
       <br>
@@ -275,7 +274,7 @@
               
             });
             </script>
-
+</crowd-entity-annotation>
 
 
 <script type="text/javascript"> 
