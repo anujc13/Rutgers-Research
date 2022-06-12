@@ -1,127 +1,303 @@
 <meta charset="utf-8">
-<script type="text/javascript" src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<script type = "text/javascript" src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+<h1 style="text-align: center;"><strong>This task is accessible using Google Chrome only</strong></h1>
+
 
 <crowd-entity-annotation 
   answer-format="flatten-objects"
   name="crowd-entity-annotation"
-  header="How does the writer feel in connection with ${entity} in this passage?"
-  labels="[{'label': 'joy', 'shortDisplayName': 'joy', 'fullDisplayName': 'Joy'},{'label': 'admire', 'shortDisplayName': 'adm', 'fullDisplayName': 'Admiration'}, {'label': 'fear', 'shortDisplayName': 'fear', 'fullDisplayName': 'Fear'}, {'label': 'surprise', 'shortDisplayName': 'surp', 'fullDisplayName': 'Surprise'}, {'label': 'sadness', 'shortDisplayName': 'sad', 'fullDisplayName': 'Sadness'}, {'label': 'disgust', 'shortDisplayName': 'dis', 'fullDisplayName': 'Disgust'}, {'label': 'anger', 'shortDisplayName': 'ang', 'fullDisplayName': 'Anger'}, {'label': 'interest', 'shortDisplayName': 'int', 'fullDisplayName': 'Interest'}]"
-  text = "${passage}"
->
-
-<div id="instructions" style="margin-top: 20px; font-size: 16px;">
-    <ul >
-      <li><strong>Read</strong> the text carefully. We are interested in <strong>emotions expressed in text by the writer/speaker towards ${entity}</strong> using the following emotion wheel:</br><div align="center"><img width="600" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div></li>
-      <li>The emotions are arranged based on their relationship to each other: joy is opposite of sadness, fear the opposite of anger, etc. The words themselves aren't important - use them as guides to understand what emotion is being expressed <strong>towards the entity</strong>. Click on the Instructions button at the top left of this window to see some examples of emotions expressed towards an entity through text.</li>
-      <li>Select all emotions that you think the writer/speaker feels towards <strong>${entity}</strong> based on the text. Use the slider to indicate your <strong>confidence</strong> in the presence of the emotion from Not confident(0) to Very confident(5)</li>
-      <li>Identify and highlight <strong>at most one</strong> word, phrase or sentence which illustrates each emotion that you have selected previously. You can highlight text by selecting the label on the right and then clicking and dragging your cursor over the text you want to highlight.</li>
-      <li>You can <strong>change or remove</strong> labels and highlights anytime.</li>
-    </ul>
-  </div>
+  header="Affective Polarization"
+  text="Spend too much money.,Budget minded.  A little more conscious of other peoples money.  I like their foreign policies.  Just more concerned about foreign policy and they are not as weak as Democrats.,,National debt military status. We need to build up our military give people more incentive to be in the military unemployment.,The military.,,,7,3,2,1,1,1,1.0
+  1984,2.0,The Democratic party is a compassionate party.  They honor working people and they do provide., The great giveaway program  It's not like they really mean it.  In an election year, you're not going to find anyone, Democrat or Republican, voting against Social Security.  I dislike political motivation.  I'd like to see someone vote his conscience occasionally.,The Republican party encourages private competition which I think is economically healthy.  For example, the deregulation of the airlines and also buses were deregulated, weren't they?  This allowed other entrepreneurial people to get into, to operate businesses that had otherwise been closed.  Private enterprise is good.  I'll tell you another thing is that Air Atlanta, primarily a Black corporation.  It caters to Blacks.  It's run by Blacks or owned by Black people which proves the health of ethnic enterprises.  (A.E.) Clare Booth Luce.,,Economy -- getting out of debt.  Education -- I feel that we have a problem and it needs analyzing.  Too much permissive passing; we should teach people how to read and our teachers are not teaching.  Communism in this hemisphere -- I'm afraid of the spread of communism.,Education -- the need to improve our educational system."
+  labels="[{label: 'entity_1', shortDisplayName: 'ent1', fullDisplayName: 'Domestic Issue/Policy'}, {label: 'entity_2', shortDisplayName: 'ent2', fullDisplayName: 'Group'}, {label: 'entity_3', shortDisplayName: 'ent3', fullDisplayName: 'Value'}]"></crowd-entity-annotation>
   
-    <full-instructions header="Interpersonal emotion annotation instructions">
-    <ul >
-      <li><strong>Read</strong> the text carefully. We are interested in <strong>emotions expressed in text by the writer/speaker towards, or in connection with ${entity}</strong> using the following emotion wheel:</br><div align="center"><img width="500" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div></li>
-      <li>The emotions are arranged based on their relationship to each other: joy is opposite of sadness, fear the opposite of anger, etc. The words themselves aren't important - use them as guides to understand what emotion is being expressed <strong>towards the entity</strong>. Click on the Instructions button at the top left of this window to see some examples of emotions expressed towards an entity through text.</li>
-      <li>Select all emotions that you think the writer/speaker feels towards <strong>${entity}</strong> based on the text. Use the slider to indicate your <strong>confidence</strong> in the presence of the emotion from Not confident(0) to Very confident(5)</li>
-      <li>Identify and highlight <strong>at most one</strong> word, phrase or sentence which illustrates each emotion that you have selected previously. You can highlight text by selecting the label on the right and then clicking and dragging your cursor over the text you want to highlight.</li>
-      <li>You can <strong>change or remove</strong> labels and highlights anytime.</li>
-    </ul>
-  </full-instructions>
-
-  <short-instructions>
-   <div id="short-instructions" style="margin-top: 20px; font-size: 16px;">
-        <p><strong>Please click on 'More Instructions' at the bottom to read detailed instructions and see the emotion wheel to use for this task</strong>. </p>
-        <p>Here are some examples of each of the 8 emotion labels in our wheel being expressed <strong>in connection with the entity 'Tom'</strong> through text:</p>
-        <ul>
-      <li><strong>Joy</strong> I am delighted that Tom will be travelling with us tonight.</li>
-      <li><strong>Admiration</strong> Tom expertly navigated the team through the crisis. </li>
-      <li><strong>Fear</strong> Tom has too much power, and it should make us worry. </li>
-      <li> <strong>Surprise</strong> Tom didn't mince his words on the subject, and it was a refreshing change from the dull proceedings. </li>
-      <li><strong>Sadness</strong> After 4 years of hope, Tom's stellar leadership has sadly come to an end.</li>
-      <li><strong>Disgust</strong> Tom's incompetence is staggering - maybe he just doesn't want to do the job. </li>
-      <li><strong>Anger</strong> Tom's actions were reprehensible and disgusting - he ought to apologize. </li>
-      <li><strong>Interest</strong> We eagerly await Dr. Tom's speech to the committee, and his decision on the subject of the trade law. </li>
-    </ul>
-    </div>
-  </short-instructions>   
-
-<div id="emotionQuestion" style="margin-top: 20px; column-count:1;">
-        <p><strong>Please click on 'Instructions' at the top left to see examples, and 'More Instructions' at the bottom of the examples pane to read detailed instructions to use for this task. </strong></p>
-        <p>We are interested in how the writer of a passage feel towards, or in connection with ${entity} in the text using the following emotion wheel. Try to highlight at most one word/phrase/sentence for each emotion by selecting the emotion color on the right, and dragging it over the text.</p>
-        <div align="center"><img width="500" alt="Plutchik wheel showing the emotion labels" src="https://venkatasg.net/files/plutchnik.png"></div>
-        <p>If you think an emotion is expressed by the writer of the text towards ${entity}, but can't select just one word/phrase/sentence, you can select the emotion here along with your confidence rating(from 1-not confident to 5-totally confident).</p>
+  
+  
+  
+  <div id ="table">
+    <h3 style="text-align: center;">Dimensions of Ideology: </h3>
+    <table style="border-collapse: collapse; border: 1px solid black; width: 10%">
+      <tr>
+        <td style="border: 1px solid black;">
+          <label for="unemployment-inflation" style="font-size: smaller"><strong>Unemployment-Inflation Tradeoff</strong></label><br>
+          <select name ="controls" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="one">Support employment policy</option>
+            <option value="two">Against expansive monetary policy because it generates inflation</option>
+            <option value="three">Both</option>
+          </select><br>
+        </td>
+        <td style="border: 1px solid black;">
+          <label for="social spending-deficit" style="font-size: smaller"><strong>Social Spending-Deficit Tradeoff</strong></label><br>
+          <select name="government" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="moderate_val_left">Support redistributive policy</option>
+            <option value="mixed_val">Discretionary fiscal policy generates budget deficit</option>
+            <option value="moderate_val_right">Both</option>
+          </select><br>
+        </td>
+        <td style="text-align: center; border: 1px solid black;">
+          <label for="social_topic_0"><strong>Government Size</strong></label><br>
+          <select name="taxation" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="moderate_val_left">Supports government regulation and social safety</option>
+            <option value="mixed_val">Support Small government and deregulation</option>
+            <option value="moderate_val_right">Both</option>
+          </select><br>
+        </td>
+        <td style="text-align: center; border: 1px solid black;">
+          <label for="social_topic_0"><strong>Taxation-Inequality Tradeoff</strong></label><br>
+          <select name="taxation" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="moderate_val_left">Support taxing the rich</option>
+            <option value="mixed_val">Support across the board tax cuts</option>
+            <option value="moderate_val_right">Both</option>
+          </select><br>
+        </td>
+        <td style="text-align: center; border: 1px solid black;">
+          <label for="foreign_topic_0"><strong>Trade-Tariffs/Quotas Tradeoff</strong></label><br>
+          <select name="trade" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="moderate_val_left">Supports tariff</option>
+            <option value="mixed_val">Supports free trade</option>
+            <option value="moderate_val_right">both</option>
+          </select><br>
+        </td>
+        <td style="text-align: center; border: 1px solid black;">
+          <label for="foreign_topic_0"><strong>Employee-Business Tradeoff</strong></label><br>
+          <select name="labor" class="dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="moderate_val_left">Supports employees and unions</option>
+            <option value="mixed_val">Supports businesses</option>
+            <option value="moderate_val_right">Both</option>
+          </select><br>
+        </td>
+      </tr>
+      <tr>
+  
+        <td style="border: 1px solid black;">
+          <p>
+          <u>Example 1:</u> The most important problem is employment social security.<br><br>
+          <u>Annotation:</u> support employment policy.<br><br> 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+          <u>Example 1:</u> The most important problem is homelessness.<br><br>
+          <u>Annotation:</u> Support redistributive policy.<br><br>
+          </p>  
+        </td>
+          
+        <td style="border: 1px solid black;">
+          <u>Example 1:</u> The most important problem is environment/farming/interest rates.<br><br>
+          <u>Annotation:</u> Support government regulation and social safety.<br><br>
+        </td>
+        
+        <td style="border: 1px solid black;">
+          <u>Example 1:</u> The most important problem is high taxes.<br><br>
+          <u>Annotation:</u> Support across the board tax cuts.<br><br>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <u>Example 1:</u> The most important problem is that cheap imports are affecting our jobs.<br><br>
+          <u>Annotation:</u> Supports tariff.<br><br>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <u>Example 1:</u> The most important problem is businesses are being regulated.<br><br>
+          <u>Annotation:</u> Supports business.<br><br>
+        </td>
+      </tr>
+  
+      <tr>
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 2:</u> The most important problem is inflation.<br><br>
+            <u>Annotation:</u> Against expansive monetary policy because it generates inflation.<br><br>
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 2:</u> The most important problem is deficit.<br><br>
+            <u>Annotation:</u> Discretionary fiscal policy generates budget deficit. 
+          </p>
+        </td>
+  
+        <td>
+          <p>
+            <u>Example 2:</u> The most important problem is government size.<br><br>
+            <u>Annotation:</u> Support small government and deregulation.  
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 2:</u> The most important problem is the shrinking middle class.<br><br>
+            <u>Annotation:</u> Support taxing the rich. 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 2:</u> The most important problem is barriers to trade should be abolished.<br><br>
+            <u>Annotation:</u> Support free trade. 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 2:</u> The most important problem is employee wages are low.<br><br>
+            <u>Annotation:</u> Support employee and unions. 
+          </p>
+        </td>
+  
+      </tr>
+  
+      <tr>
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is inflation and unemployment.<br><br>
+            <u>Annotation:</u> Both. <br><br>
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is inflation and homelessness and deficit.<br><br>
+            <u>Annotation:</u> Both. 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is environment/farming/interest rates and government size.<br><br>
+            <u>Annotation:</u> Both.
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is high taxes and the shrinking middle class.<br><br>
+            <u>Annotation:</u> Both 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is imports are cheap and barriers to trade.<br><br>
+            <u>Annotation:</u> Both. 
+          </p>
+        </td>
+  
+        <td style="border: 1px solid black;">
+          <p>
+            <u>Example 3:</u> The most important problem is businesses are being regulated and employee wages are low.<br><br>
+            <u>Annotation:</u> Both. 
+          </p>
+        </td>
+      </tr>
+    </table>
+    <h3>Question asked: What is the nation's most important problem?</h3>
+    <p style='line-height: 2'>Answer: Spend too much money.,Budget minded.  A little more conscious of other peoples money.  I like their foreign policies.  Just more concerned about foreign policy and they are not as weak as Democrats.,,National debt military status. We need to build up our military give people more incentive to be in the military unemployment.,The military.,,,7,3,2,1,1,1,1.0
+      1984,2.0,The Democratic party is a compassionate party.  They honor working people and they do provide., The great giveaway program  It's not like they really mean it.  In an election year, you're not going to find anyone, Democrat or Republican, voting against Social Security.  I dislike political motivation.  I'd like to see someone vote his conscience occasionally.,The Republican party encourages private competition which I think is economically healthy.  For example, the deregulation of the airlines and also buses were deregulated, weren't they?  This allowed other entrepreneurial people to get into, to operate businesses that had otherwise been closed.  Private enterprise is good.  I'll tell you another thing is that Air Atlanta, primarily a Black corporation.  It caters to Blacks.  It's run by Blacks or owned by Black people which proves the health of ethnic enterprises.  (A.E.) Clare Booth Luce.,,Economy -- getting out of debt.  Education -- I feel that we have a problem and it needs analyzing.  Too much permissive passing; we should teach people how to read and our teachers are not teaching.  Communism in this hemisphere -- I'm afraid of the spread of communism.,Education -- the need to improve our educational system.</p>
+  </div>
+    <br>
+      <br>
+    <br>
+    <button>Submit</button>
+    <br>
+    <br><br><br><br><br>
+  
+    <div id="entities" style = "margin-top: 20px; ">
+        <p><strong>Instructions: </strong>Please read the question and its answer carefully. Note that party mentioned in body of the question is an entity. So, annotate for party as a group entity. Is there other entities such as values and issues? If yes, please also annotate those entities too.</p><br>
+        <p><strong>Annotation example: </strong></p>
         <br>
-      <div id="cols">
-    <crowd-checkbox name="entity_emotions" value="joy">Joy</crowd-checkbox>
-    <crowd-slider name="joy-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="admire">Admiration</crowd-checkbox>
-    <crowd-slider name="adm-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="fear">Fear</crowd-checkbox>
-    <crowd-slider name="fear-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="surprise">Surprise</crowd-checkbox>
-    <crowd-slider name="surp-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="sadness">Sadness</crowd-checkbox>
-    <crowd-slider name="sad-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="disgust">Disgust</crowd-checkbox>
-    <crowd-slider name="dis-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="anger">Anger</crowd-checkbox>
-    <crowd-slider name="ang-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    <crowd-checkbox name="entity_emotions" value="interest">Interest</crowd-checkbox>
-    <crowd-slider name="int-conf" min="1" max="5" step="1" pin="true" value=5 editable="true"></crowd-slider>
-    </div>
-</div>
-
-<div id="entityQuestion" style="margin-top: 20px; column-count:1;">
-        Now answer the following questions:<br><br>Is the passage predominantly about <strong>${entity}</strong>?<br>
-     <crowd-radio-group>
-        <crowd-radio-button name="predom">Yes</crowd-radio-button>
-        <crowd-radio-button name="not_predom">No</crowd-radio-button>
-      </crowd-radio-group>
-      </div>
-
-<div id="warmthQuestion" style="margin-top: 20px; column-count:1;">
-        How does the writer feel in general about <strong>${entity}</strong>?<br>
-      <crowd-radio-group>
-        <crowd-radio-button name="warm">Warmly</crowd-radio-button>
-        <crowd-radio-button name="cold">Coldly</crowd-radio-button>
-        <crowd-radio-button name="neutral">Neutrally</crowd-radio-button>
-        <crowd-radio-button name="mixed">Mixed</crowd-radio-button>
-      </crowd-radio-group>
-      </div>
-      
-<div id="approvalQuestion" style="margin-top: 20px; column-count:1;">
-        How does the writer feel in general of <strong>${entity}'s</strong> actions/behavior?<br>
-      <crowd-radio-group>
-        <crowd-radio-button name="approval">Approval</crowd-radio-button>
-        <crowd-radio-button name="disapproval">Disapproval</crowd-radio-button>
-        <crowd-radio-button name="neut_app">Neutral</crowd-radio-button>
-        <crowd-radio-button name="mixed_app">Mixed</crowd-radio-button>
-      </crowd-radio-group>
-    </div>
+        <div id="domestic">
+          <label for="entity_1" style="color: green;"><strong>Domestic Issue/Policy</strong></label>
+        <br>
+        <select name ="entity_1" class="affective-dropdown">
+          <option selected value="default"> -- select an option -- </option>
+          <option value="likes">Likes</option>
+          <option value="neutral">Neutral</option>
+          <option value="dislikes">Dislikes</option>
+        </select><br>
+        <crowd-checkbox name="ent1-checkbox"></crowd-checkbox>
+        <label><a href="javascript:hideShowGroup();">Not Applicable</a></label>
+        </div>
+        <br>
+        <br>
     
-<div id="commentsBox" style="margin-top: 20px; column-count:1;">
-        <h3>Comments</h3>
-        <crowd-text-area style="border:1px solid black;" name="comments" rows="4"></crowd-text-area>
-</div>
- 
-</crowd-entity-annotation>
+        <div id="group" style="display: none">
+          <label for="entity_2"><strong>Group</strong></label>
+          <br>
+          <select name ="entity_2" class="affective-dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="likes">Likes</option>
+            <option value="neutral">Neutral</option>
+            <option value="dislikes">Dislikes</option>
+          </select><br>
+          <crowd-checkbox name="ent2-checkbox"></crowd-checkbox>
+          <label><a href="javascript:hideShowValue();">Not Applicable</a></label>
+        </div>
+        <br>
+        <br>
+        
+        <div id="value" style="display: none;">
+          <label for="entity_3"><strong>Value</strong></label>
+          <br>
+          <select name ="entity_3" class="affective-dropdown">
+            <option selected value="default"> -- select an option -- </option>
+            <option value="likes">Likes</option>
+            <option value="neutral">Neutral</option>
+            <option value="dislikes">Dislikes</option>
+          </select><br>
+          <crowd-checkbox name="ent3-checkbox"></crowd-checkbox>
+          <label>Not Applicable</label>
+        </div>
+        </div>
     
-<script type="text/javascript">
-    document.addEventListener('all-crowd-elements-ready', () => {
-    document
-        .querySelector('crowd-entity-annotation')
-        .shadowRoot
-        .querySelector('crowd-form')
-        .form
-        .appendChild(emotionQuestion)
-        .appendChild(entityQuestion)
-        .appendChild(warmthQuestion)
-        .appendChild(approvalQuestion)
-        .appendChild(commentsBox);
-    });
-    </script>
+        <script type="text/javascript">
+            document.addEventListener('all-crowd-elements-ready', () => {
+            document
+                .querySelector('crowd-entity-annotation')
+                .shadowRoot
+                .querySelector('crowd-form')
+                .form
+                .appendChild(table)
+                .appendChild(entities)
+              
+            });
+            </script>
 
-<section>
-  <input name="dummy", type="hidden"/>
-</section>
+
+
+<script type="text/javascript"> 
+    function hideShowGroup(){
+  
+      var el = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector("#group");
+      if (el.style.display =="none"){
+        el.style.display = "block";
+      }
+      else{
+        el.style.display = "none";
+      }
+      return;
+    }
+    function hideShowValue(){
+        var el = document.querySelector('crowd-entity-annotation').shadowRoot.querySelector('crowd-form').querySelector("#value");
+        if (el.style.display =="none"){
+        el.style.display = "block";
+        }
+        else{
+         el.style.display = "none";
+        }
+        return;
+    }
+  </script>

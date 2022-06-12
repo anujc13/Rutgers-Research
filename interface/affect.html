@@ -36,6 +36,28 @@
   #value{
       display: none;
   }
+  table {
+  border-collapse: collapse;
+
+  }
+  table td {
+    border: 1px solid black;
+  }
+
+  #table{
+    display: none;
+  }
+
+  button {
+  background-color: #FA7107 ; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  }
 
 </style>
 
@@ -47,7 +69,7 @@
   header="Affective Polarization"
   text="${Text}"
   labels="[{label: 'entity_1', shortDisplayName: 'ent1', fullDisplayName: 'Domestic Issue/Policy'}, {label: 'entity_2', shortDisplayName: 'ent2', fullDisplayName: 'Group'}, {label: 'entity_3', shortDisplayName: 'ent3', fullDisplayName: 'Value'}]"></crowd-entity-annotation>
-
+  
     <div id="entities" style = "margin-top: 20px; ">
         <p><strong>Instructions: </strong>Please read the question and its answer carefully. Note that party mentioned in body of the question is an entity. So, annotate for party as a group entity. Is there other entities such as values and issues? If yes, please also annotate those entities too.</p><br>
         <p><strong>Annotation example: </strong></p>
